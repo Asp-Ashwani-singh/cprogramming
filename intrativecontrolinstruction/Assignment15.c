@@ -25,11 +25,49 @@ void program1(){
 }
 
 void program2(){
-    
+    int start,end;
+    printf("Enter two number for finding prime number");
+    scanf("%d%d",&start,&end);
+    for (start;start<=end;start++){
+          if(is_prime(start)==1){
+        printf("%d\t",start);
+    }
+    }
+}
+
+void program3(){
+    int start;
+    printf("Enter number for finding next prime number");
+    scanf("%d",&start);
+    for (++start;;start++){
+          if(is_prime(start)==1){
+        printf("%d\t",start);
+        break;
+    }
+}
+}
+
+void program4(){
+    int num1,num2,max;
+printf("Enter two number");
+scanf("%d%d",&num1,&num2);
+if (num1>=num2) max=num1;
+else max=num2;
+while (1==1)
+{
+    if (max%num1==0 && max%num2==0)
+    return max;
 }
 
 
+}
+
+
+
 int main(){
-program1();
+// program1();
+// program2();
+// program3();
+program4();
     return 0;
 }
