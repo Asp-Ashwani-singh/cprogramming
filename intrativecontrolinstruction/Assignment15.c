@@ -48,18 +48,14 @@ void program3(){
 }
 
 void program4(){
-    int num1,num2,max;
-printf("Enter two number");
-scanf("%d%d",&num1,&num2);
-if (num1>=num2) max=num1;
-else max=num2;
-while (1==1)
-{
-    if (max%num1==0 && max%num2==0)
-    return max;
-}
-
-
+    int num1,num2,min;
+    printf("Enter two number");
+    scanf("%d%d",&num1,&num2);
+    for (min=num1<num2?num1:num2;min>=1;min--){
+    if (num1%min==0 && num2%min==0)
+        break;
+    }
+    printf("Hcf of two number is %d",min);
 }
 
 

@@ -126,6 +126,14 @@ int flag=1,num,sum=0;
 
 int main(){
 // review_nakul();
-lecture_solution_assignment_9_two();
+// lecture_solution_assignment_9_two();
 
+int i,j;
+for(i=1;i<=4;i++){
+    for(j=1;j<=5;j++){
+        pritnf("*");
+    }
+    printf("\n");
+}
+return 0;
 }
