@@ -75,6 +75,7 @@ void program4(){
         printf("\n");
     }
 }
+
 void program5(){
     int row,col,n=5;
     for (row=1;row<=4;row++){
@@ -130,6 +131,59 @@ void program7(){
 }//pending logic
 
 
+void program8(){
+    int row,col,n=5;
+    for (row=1;row<=4;row++){
+        for (col=1;col<=7;col++){
+            if (col<=n-row ||  col>=n-2+row)
+            {
+                printf("*");
+            }
+            else printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+void program9(){
+    int row,col,n=5;
+    for (row=1;row<=4;row++){
+        int k=1;
+        for (col=1;col<=7;col++){
+            if (col<=n-row ||  col>=n-2+row)
+            {
+                printf("%d",k);
+                if(col<=4-row){
+                    k++;
+                }
+                else if(col>=3+row) {k--;}
+                
+            }
+            else printf(" ");
+        }
+        printf("\n");
+    }
+}
+void program10(){
+    int row,col,n=5;
+    for (row=1;row<=4;row++){
+        int k=65;
+        for (col=1;col<=7;col++){
+            if (col<=n-row ||  col>=n-2+row)
+            {
+                printf("%c",k);
+                if(col<=4-row){
+                    k++;
+                }
+                else if(col>=3+row) {k--;}
+                
+            }
+            else printf(" ");
+        }
+        printf("\n");
+    }
+}
+
 int main(){
     // program1();
     // program2();
@@ -137,9 +191,9 @@ int main(){
     // program4();
     // program5();
     // program6();
-    program7();
+    // program7();
     // program8();
     // program9();
-    // program10();
+    program10();
     return 0;
 }
