@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <wchar.h>
+#include <locale.h>
 
 void program1(){
     int n;
@@ -55,7 +58,7 @@ void program2(){
     printf("1.Addition\n 2.Substraction\n 3.Multiplication\n 4.Division\n 5.Exit\n");
     printf("Enter number to select menu ");
     scanf("%d",&n);
-    switch(n){
+    switch(1){
         case 1:
             printf("Addition");
             break;
@@ -69,24 +72,29 @@ void program2(){
             printf("Division");
             break;
         case 5:
-            printf("Exit");
-            break;
+            exit(0); // terminate the program 
         default:
             printf("invalid menu retry again");
     }
     }
 }
 void program3(){
-    int n;
+    int day;
     printf("Enter day number of week ");
-    scanf("%d",&n);
-    switch(n){
+    scanf("%d",&day);
+    
+    switch(day){
      case 1:
             printf("Sunday");
             break;
         case 2:
-            printf("Monday");
+            {
+            setlocale(LC_ALL, "hi_IN.UTF-8");
+            const wchar_t *hindi_text = L"जय महाकाल";
+            wprintf(L"%ls",hindi_text);
             break;
+            }
+            
         case 3:
             printf("Tuesday");
             break;
@@ -168,7 +176,7 @@ switch(n){
 int main(){
     // program1();
     // program2();
-    // program3();
+    program3();
     // program4();
     // program5();
     return 0;

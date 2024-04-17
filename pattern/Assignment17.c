@@ -162,6 +162,6 @@ int main(){
     // program7();
     // program8();
     // program9();
-    // program10();
+    program10();
     return 0;
 }

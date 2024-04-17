@@ -71,7 +71,7 @@ int main(){
     //p1(1,100);
     //p4(1,200);
     // p2(7);
-    printf("%lld",p5(3));
+    // printf("%lld",p5(3));
     return 0;
 }
 
