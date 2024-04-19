@@ -8,8 +8,14 @@
 
 //Decalaration of function
 #include <stdio.h>
-long long fuctorial(long long);
-int isdigit(char);
+int factorial(int);
+int is_digit(char);
+float permutation(int,int);
+float combination(int,int);
+void prime_factor(int);
+int is_prime(int);
+
+
 
 
 int main()
@@ -35,19 +41,50 @@ int main()
         //fifth program
 
          */
+       prime_factor(36);
     return 0;
 }
 
-// int check_single_digit(char a[]){
 
-    
-// }
+void prime_factor(int n){
+    int i;
+    for (i=2;n;i++){
+        while(n!=0){
+            if(n%i==0 && is_prime(i)==1)
+            {
+                printf("%d",i);
+                n/=i;
+            }
+            else break;
+        }
+    }
+}
 
-int isdigit(char c){
+int is_prime(int n){
+    int i;
+    for (i=2;i<=n;i++){
+        if(n%i==0) break;
+    }
+    if(i==n) return 1;
+    return 0;
+}
+
+int check_digit(int n,int d){
+    while (n!=0)
+    {
+        if(n%10==d){
+            return 1;
+        }
+        n/=10;
+    }
+    return 0;
+}
+
+int is_digit(char c){
     return (c>='0' && c<='9');
 }
 
-long long fuctorial(long long num){
+int factorial(int num){
     if (num<=0) {
         printf("Invalid number");
         return 0;
@@ -60,3 +97,10 @@ long long fuctorial(long long num){
     return fact;
 }
 
+float combination(int n,int r){
+    return factorial(n)/(factorial(n-r)*factorial(r));
+}
+
+float permutation(int n,int r){
+    return factorial(n)/(factorial(n-r));
+}
