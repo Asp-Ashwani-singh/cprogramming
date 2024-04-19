@@ -11,12 +11,14 @@ int is_prime(int);
 int power(int,int);
 int digit_count(int);
 int is_armstrong(int);
-long long factorial(int);
+int factorial(int);
 void p1(int,int);  //done
 void p2(int); //done
-void p3(int); //pending working on logic
+void pascalTriangle(int); //pending working on logic
 void p4(int,int); //done
-long long p5(int); //done
+int p5(int); //done
+int combination(int,int);
+
 
 
 
@@ -27,6 +29,7 @@ void p1(int a,int b){
         if(is_prime(i)==1) printf("%d\t",i);
     }
 }
+
 void p2(int n){
     int prev=-1,next=1,i,num=0;
     if (n>=1){
@@ -57,7 +60,40 @@ void p4(int a,int b){
     }
 }
 
-long long p5(int n){
+
+void pascalTriangle(int lines){
+    int row,col,flag,r;
+    for(row=1;row<=lines;row++){
+        flag=1;r=0;
+        for(col=1;col<=2*lines-1;col++){
+            if(col>=lines+1-row && col<=lines-1+row)
+            {
+                if(flag==1)
+                {
+                    printf("%d",combination(row-1,r++));
+                    flag=0;
+                }
+                else
+                {
+                    printf(" ");
+                    flag=1;
+                   
+                }
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+}
+
+int combination(int n,int r){
+    return factorial(n)/(factorial(n-r)*factorial(r));
+}
+
+int p5(int n){
     int i;long long sum=0;
     for (i=1;i<=n;i++){
         sum+=factorial(i)/i;
@@ -72,6 +108,9 @@ int main(){
     //p4(1,200);
     // p2(7);
     // printf("%lld",p5(3));
+    pascalTriangle(5);
+    // printf("%d",combination(0,0));
+    // printf("%d",factorial(0));
     return 0;
 }
 
@@ -114,9 +153,9 @@ int is_prime(int n){
     return 0;
 }
 
-long long factorial(int n){
-    long long fact=0;
-        if(n==1) return 1;
+int factorial(int n){
+    int fact=0;
+        if(n==0) return 1;
         fact=n*factorial(n-1);
         return fact;
 }
